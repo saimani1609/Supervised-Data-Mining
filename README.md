@@ -29,26 +29,7 @@ J48 classifier is a straightforward C4.5 decision tree for classification, which
 most useful decision tree approach for classification problems. This technique constructs a tree to
 model the classification process. After the tree is built, the algorithm is applied to each tuple in the
 database and results in classification for that tuple.
-Algorithm J48 :
-INPUT:
-P//Training data
-OUTPUT
-DT //Decision tree
-DTBUILD (*P)
-{
-DT=φ;
 
-DT= Create root node and label with splitting attribute;
-DT= Add arc to root node for each split predicate and label;
-For each arc do
-P= Database created by applying splitting predicate to P;
-If stopping point reached for this path, then
-DT’= create leaf node and label with
-appropriate class;
-Else
-DT’= DTBUILD(P);
-DT= add DT’ to arc;
-}
 While building a decision tree, J48 omits the missing values i.e. the value for that item can be
 predicted based on what is known about the attribute values for the other records. The key idea is to
 split the data into range based on the attribute values for that item that are identified in the training
